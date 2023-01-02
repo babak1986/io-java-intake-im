@@ -1,0 +1,23 @@
+server:
+  port: 8525
+spring:
+  application:
+    name: IO Java Intake
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://172.23.0.20:5432/intakedb
+    username: postgres
+    password: 123456
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+cors:
+  origins: "*"
+  methods: GET, POST, OPTIONS
+  headers: "*"
+jwt:
+  secret: SqP1H@KLwe4%BG*
+  expiry: 1209600000
+  excludes: /user/login,/swagger-ui**,/v3/api-docs**
